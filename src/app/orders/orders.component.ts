@@ -20,7 +20,14 @@ export class OrdersComponent implements OnInit {
 
   reloadComponent() {
     this.orders = this.authService.loadOrders();
-  }
+    let currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
+  //   if (currentUser && currentUser._id) {
+  //     let userId = currentUser._id;
+      
+  //         this.orders = this.orders.filter((orderItem => orderItem.user._id === userId));
+       
+  // }
+}
 
   calculateTotal(order: any) {
     return order.items.reduce((total: number, item: any) => total + parseFloat(item.price), 0);
@@ -30,6 +37,7 @@ export class OrdersComponent implements OnInit {
     this.orders = this.orders.filter(orderItem => orderItem._id !== order._id);
     
     this.authService.deleteOrder(order);
+    this.reloadComponent();
     
     this.changeDetectorRef.detectChanges(); // Trigger change detection
   }

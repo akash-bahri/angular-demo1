@@ -28,10 +28,16 @@ export class RegisterComponent implements OnInit{
         this.erormessage = null;
       } else {
         this.erormessage = 'Invalid username or password';
+        setTimeout(() => {
+          this.erormessage = null;
+        }, 1000);
       }
     }
     else{
       this.erormessage="Invalid username or password";
+      setTimeout(() => {
+        this.erormessage = null;
+      }, 1000);
     }
   }
 

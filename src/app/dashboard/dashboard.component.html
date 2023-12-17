@@ -4,12 +4,13 @@
     <ul>
       <div class="dashboard-container">
         <div class="dashboard-item" *ngFor="let item of items">
-            <!-- item content here -->
-        
-        <p>{{ item.name }}&nbsp; - &nbsp; ${{item.price}} &nbsp;
-          <button class="add-to-cart-button" (click)="addToCart(item)" [disabled]="item.addedToCart">Add to cart</button>
-        </p>
+          <div class="item-info">
+            <p>{{ item.name }}&nbsp; - &nbsp; ${{item.price}} &nbsp; </p>
+          </div>
+          <div class="item-action">
+            <button class="add-to-cart-button" (click)="addToCart(item)" [disabled]="item.addedToCart">Add to cart</button>
+          </div>
+        </div>
       </div>
-    </div>
     </ul>
 </div>

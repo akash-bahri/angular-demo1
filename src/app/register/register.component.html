@@ -1,6 +1,9 @@
 <div class="login-container">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <h2>Register</h2>
+      <div class="error-message">
+        <h2>{{erormessage}}</h2> <br/>
+     </div>
       <div class="form-group">
         <label for="username">Email:</label>
         <input type="email" id="username" formControlName="username">
@@ -12,8 +15,6 @@
       </div>
     </form><br/>
     <a routerLink="/login">Login</a>
-    <div>
-        {{erormessage}}
-    </div>
+    
   </div>
   

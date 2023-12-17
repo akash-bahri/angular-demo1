@@ -74,6 +74,7 @@ export class AuthService {
 			localStorage.setItem('currentUser',JSON.stringify(temp));
 			this.isAuthenticatedSubject.next(true);
 			this.router.navigate(['/dashboard']);
+			this.loadOrders();
 			return true;
 		}
 		else if (credentials.username === 'demo' && credentials.password === 'password') {
@@ -92,6 +93,7 @@ export class AuthService {
 		localStorage.clear();
 		this.isAuthenticatedSubject.next(false);
 		this.router.navigate(['/login']);
+		this.orders=[];
 	}
 
 	register(credentials: { username: string; password: string }): boolean {

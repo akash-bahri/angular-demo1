@@ -2,21 +2,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    
     padding: 20px;
 }
 
 .dashboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 25px;
     margin: 10px;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 100%;
+    width: 700px;
     box-sizing: border-box;
+    background-color: #ffffff;
 }
-
+.item-info {
+    flex: 1;
+  }
 
 h3 {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -52,7 +58,7 @@ h3 {
 
 .checkout{
     background-color: #19778a; /* Green */
-    width: 500px;
+    width: 700px;
     border: none;
     color: white;
     padding: 20px 32px;
@@ -61,7 +67,8 @@ h3 {
     display: inline-block;
     font-size: 16px;
     margin-top: 20px;
-    margin-left: 35%;
+    display: flex;
+    justify-content: center;
     cursor: pointer !important;
     transition-duration: 0.4s;
 }

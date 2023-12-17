@@ -1,20 +1,25 @@
 <app-menu-bar></app-menu-bar>
 
-<div><h3>{{status}}</h3></div>
+<div>
+  <h3>{{status}}</h3>
+</div>
 <div *ngIf="cart.length > 0">
   <h3>Cart</h3>
-    <ul>
-      <div class="dashboard-container">
-        <div class="dashboard-item" *ngFor="let item of cart">
-        <p>{{ item.name }}&nbsp; - &nbsp; ${{item.price}} &nbsp; 
-            <button class="add-to-cart-button" (click)="removeFromCart(item)">Remove from cart</button>
-           
-        </p>
+  <ul>
+    <div class="dashboard-container">
+      <div class="dashboard-item" *ngFor="let item of cart">
+        <div class="item-info">
+          <p>{{ item.name }}&nbsp; - &nbsp; ${{item.price}} &nbsp; </p>
+        </div>
+          <button class="add-to-cart-button" (click)="removeFromCart(item)">Remove from cart</button>
+      </div>
+      <div>
+        <button class="checkout" (click)="checkout()">Checkout</button>
       </div>
     </div>
-      <button class="add-to-cart-button checkout"(click)="checkout()">Checkout</button>
-    </ul>
+  </ul>
 </div>
+
 <div *ngIf="cart.length == 0 && status == ''">
   <h3>Cart is empty</h3>
 </div>

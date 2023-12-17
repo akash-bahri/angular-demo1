@@ -24,13 +24,31 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log("line 1");
     if (this.loginForm.valid) {
+      console.log("line 2");
+      
       if (this.authService.login(this.loginForm.value)) {
         this.loginError = null;
-      } else {
+      } 
+      else {
+        console.log("line 3");
         this.loginError = 'Invalid username or password';
+        setTimeout(() => {
+          this.loginError = null;
+        }, 1000);
       }
+      
     }
+    else {
+      console.log("line 4");
+      this.loginError = 'Form is invalid';
+      setTimeout(() => {
+        this.loginError = null;
+      }, 1000);
+    }
+    console.log("line 5");
   }
+ 
 
 }
