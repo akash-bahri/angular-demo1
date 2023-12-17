@@ -11,7 +11,7 @@ export class AuthService {
 	private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 	private readonly AUTH_TOKEN_KEY = 'authToken';
 
-	 // Expose the subject as an observable to be notified of changes
+	
 	 isAuthenticated$: Observable<boolean> = this.isAuthenticatedSubject.asObservable();
 
 	users: any[];
@@ -43,7 +43,7 @@ export class AuthService {
 	loadOrders() {
 		let currentUser = JSON.parse(localStorage.getItem('currentUser') as string);
 	  
-		// Check if currentUser is not null before proceeding
+	
 		if (currentUser && currentUser._id) {
 		  let userId = currentUser._id;
 		  this.userService.getOrders().subscribe(
@@ -55,9 +55,9 @@ export class AuthService {
 			}
 		  );
 		} else {
-		  // Handle the case where currentUser is null
+		
 		  console.error('No current user found in localStorage');
-		  // Consider setting this.orders to an empty array or a default value
+		 
 		}
 	  
 	
