@@ -1,0 +1,15 @@
+<app-menu-bar></app-menu-bar>
+<h3>List of Items</h3>
+<div *ngIf="items.length > 0">
+    <ul>
+      <div class="dashboard-container">
+        <div class="dashboard-item" *ngFor="let item of items">
+            <!-- item content here -->
+        
+        <p>{{ item.name }}&nbsp; - &nbsp; ${{item.price}} &nbsp;
+          <button class="add-to-cart-button" (click)="addToCart(item)" [disabled]="item.addedToCart">Add to cart</button>
+        </p>
+      </div>
+    </div>
+    </ul>
+</div>

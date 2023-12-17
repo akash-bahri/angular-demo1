@@ -1,0 +1,19 @@
+<app-menu-bar></app-menu-bar>
+<div *ngIf="orders.length > 0">
+    <h2>List of Orders</h2>
+    <ul>
+      <div class="dashboard-container">
+        <div class="dashboard-item"  *ngFor="let order of orders">
+            <div>
+                <br/>
+                <h3>OrderId : {{ order._id }}</h3> 
+                <li *ngFor="let item of order.items">
+                    {{ item.name }} - {{ item.price }}
+                </li> 
+                <h4>Total: ${{ calculateTotal(order) }}</h4>
+                <button class="add-to-cart-button" (click)="deleteOrder(order)">Delete Order</button>  
+            </div>
+        </div>
+      </div>
+    </ul>
+</div>

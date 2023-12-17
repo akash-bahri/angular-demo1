@@ -1,0 +1,21 @@
+ng generate component login
+
+-- app.module
+    import { ReactiveFormsModule } from '@angular/forms';
+    imports: [...ReactiveFormsModule] 
+
+-- login.component.html
+-- login.component.ts
+ng generate service auth
+
+-- auth.service
+    -- Add Logic
+
+-- app.module
+    -- provider    
+
+-- app-routing.module
+    -- loginComponent
+
+ng generate component dashboard
+ng generate component menu-bar
